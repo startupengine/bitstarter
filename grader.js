@@ -60,7 +60,7 @@ if(require.main == module) {
         .option('-c, --checks ', 'Path to checks.json', assertFileExists, CHECKSFILE_DEFAULT)
         .option('-f, --file ', 'Path to index.html', assertFileExists, HTMLFILE_DEFAULT)
         .parse(process.argv);
-    var checkJson = checkHtmlFile(program.file, program.checks);
+    var checkJson = checkHtmlFile("index.html", "checks.json");
     var outJson = JSON.stringify(checkJson, null, 4);
     console.log(outJson);
 } else {
